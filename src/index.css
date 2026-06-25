@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Nordic Minimalism - Matte off-black background */
+  --background: 0 0% 9%;
+  --foreground: 0 0% 90%;
+
+  /* Borders are barely visible, mostly using space instead */
+  --border: 0 0% 15%;
+
+  /* Cards don't really have backgrounds in this theme, but if needed, very subtle */
+  --card: 0 0% 11%;
+  --card-foreground: 0 0% 90%;
+
+  /* Muted Sand as primary */
+  --primary: 35 30% 75%;
+  --primary-foreground: 0 0% 9%;
+
+  /* Muted Sage as accent */
+  --accent: 120 15% 55%;
+  --accent-foreground: 0 0% 9%;
+
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 60%;
+
+  --radius: 0.25rem; /* very subtle rounding, almost sharp */
+
+  /* Domains mapped to muted natural tones */
+  --domain-security: 210 20% 60%; /* muted steel blue */
+  --domain-telecom: 35 30% 75%; /* muted sand */
+  --domain-embedded: 120 15% 55%; /* muted sage green */
+  --domain-ai: 270 15% 65%; /* muted lavender */
+  --domain-cloud: 200 25% 70%; /* soft slate sky */
+}
+
+@layer base {
+  * {
+    border-color: hsl(var(--border));
+  }
+  body {
+    @apply font-sans antialiased;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+  }
+  
+  /* Make headings use the serif font */
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-white/90;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
